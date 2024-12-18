@@ -1,0 +1,274 @@
+/* General Styles */
+
+.tile {
+    border-style: solid; /* Add this line */
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.0);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: fixed;
+    background-image: url('img/bg.webp');
+
+    background-size: cover; /* Ensures the GIF covers the entire background */
+    background-repeat: no-repeat; /* Prevents the GIF from repeating */
+    background-position: center; 
+  }
+  
+  .App {
+    text-align: center;
+    padding: 20px;
+    background-image: linear-gradient(90deg, rgb(22, 255, 255), rgba(0, 0, 0, 0.3));
+    
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .theme-toggle {
+    background: none; /* Remove default button background */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Pointer cursor for hover effect */
+    font-size: 24px; /* Adjust icon size */
+    display: flex; /* Flexbox for centering icon */
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+  
+  .theme-toggle:hover {
+    opacity: 0.8; /* Slight opacity for hover effect */
+  }
+  
+  /* Leaderboard Container */
+  .leaderboard-container {
+    margin: 20px auto;
+    max-width: 80vw;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  
+  }
+
+  .dropdown-container{
+    display: grid;
+    grid-template-rows: auto auto; /* Two rows: one for each element */
+    grid-template-columns: 1fr 6fr 1fr; 
+  }
+  .symboldropdown { 
+    justify-self: end; /* Aligns the element to the right in its row */
+    grid-row: 2; 
+ }
+ .datepicker-container {
+  justify-self: end; /* Aligns the element to the right in its row */
+  grid-column: 3;
+  margin: '10px 10px 10px 10px';
+  
+}
+  
+  /* Light Theme */
+  .App.light {
+    background-color: rgba(0, 0, 0, 0.9);
+    /* background-color: #f4f4f4; */
+    color: white;
+    min-height: 100vh;
+    /* opacity: 0.9; */
+}
+  
+ 
+  
+  /* Dark Theme */
+  .App.dark {
+    background-color: rgba(f, f, f, 0.9);
+    /* background-color: #12121287; */
+    color: #ffffff;
+    min-height: 100vh;
+    /* opacity: 0.9; */
+
+
+  }
+
+  
+  
+  .leaderboard-container.dark { 
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(60deg,rgba(0, 144, 216, 0.5), rgba(0, 255, 128, 0.3) );
+    min-height: 50vh;
+    box-shadow: #c0c0c0;
+    /* border-color: ; */
+    /* border-style: solid; */
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, white, blue);
+    border-radius: 8px; /* Rounded corners */
+
+  }
+  /* .leaderboard-container.light {
+    background-color: #ffffff;
+  } */
+  
+  /* Podium Styles */
+  .leaderboard-top {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .podium {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .podium-1 {
+    background-color: #ffd700;
+  }
+  
+  .podium-2 {
+    background-color: #c0c0c0;
+  }
+  
+  .podium-3 {
+    background-color: #cd7f32;
+  }
+  
+  /* Table Header and Rows */
+/* Table Header and Row Styles */
+.leaderboard-header,
+.leaderboard-row {
+  display: flex;
+  justify-content: space-evenly; /* Distribute space evenly */
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.leaderboard-header span,
+.leaderboard-row span {
+  flex: 1; /* Equal width for all columns */
+  text-align: center; /* Center align text */
+}
+ 
+  
+  .leaderboard-header {
+   
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .leaderboard-header.dark {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+
+  .leaderboard-header.light {
+    background: linear-gradient(90deg, #bf4141, #391f8b);
+    /* background-color:rgb(255, 255, 255); */
+    color:  white;
+    
+  }
+
+  
+  
+  .leaderboard-row:nth-child(odd) {
+    background-color: #f9f9f9;
+    background: linear-gradient(60deg, rgba(0, 255, 128, 0.3), rgba(0, 255, 128, 0.3) );
+    border-radius: 5px;
+    transform: skew(-20deg); 
+  }
+  
+ 
+
+  .leaderboard-row:nth-child(even) {
+    background-color: #ffffff;
+    background: linear-gradient(60deg, rgba(0, 255, 128, 0.9), rgba(0, 255, 128, 0.9) );
+
+    border-radius: 5px;
+    transform: skew(-20deg); 
+  }
+  
+
+
+  .App.dark .leaderboard-row:nth-child(1) {
+    background-color: #eedf0d;
+    background: linear-gradient(60deg,gold,  rgba(0, 255, 128, 0.3)  );
+
+    border-radius: 5px;
+    transform: skew(-20deg); 
+    text-decoration-style: bold;
+    /* color: grey */
+  }
+
+  .App.dark .leaderboard-row:nth-child(2) {
+    background-color: #a9a9a9;
+    background: linear-gradient(60deg,silver, rgba(0, 255, 128, 0.9) );
+
+    border-radius: 5px;
+    transform: skew(-20deg); 
+  }
+
+  .App.dark .leaderboard-row:nth-child(3) {
+    background-color: #2a0202;
+    background: linear-gradient(60deg,rgb(249, 71, 71), rgba(0, 255, 128, 0.3)  );
+
+    border-radius: 5px;
+    transform: skew(-20deg); 
+  }
+
+  /* .App.dark .leaderboard-row:nth-child(1):hover{
+    color: #bf4141;
+    
+  } */
+ /*
+  .App.dark .leaderboard-row:nth-child(2):hover {
+    color: #bf4141;
+
+  }
+
+  .App.dark .leaderboard-row:nth-child(3):hover {
+    color: #bf4141;
+
+  } */
+
+  .leaderboard-row {
+    margin: 1rem;
+    opacity: 100%;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+  }
+
+  .leaderboard-row:hover {
+    /* background-color: red; */
+    color:rgb(11, 53, 20);
+    /* background-color: red; */
+  
+    
+}
+
+
+  
+
+
+  .tile:hover {
+        /* width: 200px; Width of the parallelogram */
+        /* height: 100px; Height of the parallelogram */
+       border-width: 1px;
+       border-color: rgb(255, 255, 255)
+      
+  } 
+
+  .no-data-message {
+    display: flex;
+    /* align-self: center; */
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    min-height: 300px;
+  }

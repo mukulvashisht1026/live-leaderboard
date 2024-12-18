@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "84b141fb-2000-4738-a16c-b8abe145180b",
+		"name": "Defx-leaderboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10130472"
+	},
+	"item": [
+		{
+			"name": "fetch-Leaderboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/leaderboard/BTC/date/16-12-2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"leaderboard",
+						"BTC",
+						"date",
+						"16-12-2024"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-symbols",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/symbols",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"symbols"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch trader data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traderId\": \"Mukul\",\n    \"dateString\": \"15-12-2024\",\n    \"symbol\": \"XRP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/traderData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"traderData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add trade",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traderId\": \"panwar\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-14T12:00:00Z\",\n    \"volume\": 7000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add trade in batch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"traderId\": \"Mukul\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 4000\n},\n\n{\n    \"traderId\": \"Mayank\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 800\n},\n{\n    \"traderId\": \"Ankit\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 8120000\n},\n{\n    \"traderId\": \"Mukul\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 80\n},\n{\n    \"traderId\": \"Mukul\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 81100000\n},\n{\n    \"traderId\": \"Akshay\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 23000\n},\n{\n    \"traderId\": \"Panwar\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 4810\n},\n{\n    \"traderId\": \"Ashish\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 900\n},\n{\n    \"traderId\": \"waqar\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 100\n},\n{\n    \"traderId\": \"jatin\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 9023\n},\n{\n    \"traderId\": \"kush\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 132\n},\n{\n    \"traderId\": \"Mayank\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 4736\n},\n{\n    \"traderId\": \"Varun\",\n    \"symbol\": \"XRP\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 4842\n},\n\n{\n    \"traderId\": \"Mayank\",\n    \"symbol\": \"BTC\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 4736\n},\n{\n    \"traderId\": \"Varun\",\n    \"symbol\": \"BTC\",\n    \"timestamp\": \"2024-12-15T12:00:00Z\",\n    \"volume\": 4842\n}\n\n]"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trade/batch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trade",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
