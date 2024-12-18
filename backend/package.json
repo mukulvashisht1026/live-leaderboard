@@ -1,5 +1,5 @@
 {
-  "name": "defx-backend",
+  "name": "backend",
   "version": "1.0.0",
   "description": "backend for live leaderboard",
   "main": "index.js",
