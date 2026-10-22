@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/symbols';
+const API_URL = '/api/symbols';
 
 export const fetchSymbolsFromAPI = async () => {
   try {

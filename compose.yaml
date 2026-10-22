@@ -1,0 +1,19 @@
+name: mukul-leaderboard
+services:
+  leaderboard:
+    image: ${IMAGE_PREFIX:-mukul-local}/leaderboard:${IMAGE_TAG:-latest}
+    platform: ${DOCKER_PLATFORM:-linux/amd64}
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8088}:8080"
+    depends_on:
+      leaderboard-api:
+        condition: service_healthy
+  leaderboard-api:
+    image: ${IMAGE_PREFIX:-mukul-local}/leaderboard-api:${IMAGE_TAG:-latest}
+    platform: ${DOCKER_PLATFORM:-linux/amd64}
+    build:
+      context: ./backend
+    restart: unless-stopped

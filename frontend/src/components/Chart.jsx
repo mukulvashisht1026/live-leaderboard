@@ -10,7 +10,7 @@ export default function Chart({ traderId, dateString, symbol }) {
     // Fetch data from the API whenever props change
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/traderData', {
+        const response = await fetch('/api/traderData', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

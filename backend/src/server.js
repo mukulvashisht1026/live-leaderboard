@@ -53,9 +53,6 @@ initializeMockData();
 // Start the cron job
 task.start();
 
-// Initialize mock data
-initializeMockData();
-
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

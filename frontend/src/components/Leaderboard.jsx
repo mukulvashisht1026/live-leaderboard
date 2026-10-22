@@ -13,7 +13,7 @@ const Leaderboard = ({ theme }) => {
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [symbols, setSymbols] = useState(['BTC', 'XRP', 'ETH']); // Default symbols
   const [selectedSymbol, setSelectedSymbol] = useState('BTC'); // Default selected symbol
-  const WS_URL = 'ws://localhost:3000'; // Replace with your WebSocket URL
+  const WS_URL = `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}/ws`;
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
 
