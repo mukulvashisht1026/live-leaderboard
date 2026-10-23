@@ -42,11 +42,11 @@ Assumption:
 
 cd defx-frontend
 
-2. run below command to install all dependencies.   
+2. run below command to install all dependencies.
 
 npm install
 
-3. run below command to start the server. 
+3. run below command to start the server.
 
 npm run dev
 
@@ -151,3 +151,41 @@ Docker builds and container runtime have not been verified in the preparation
 environment because Docker daemon access was denied. Compose configuration and
 Make command expansion are checked; a successful local build and health check
 are still required.
+
+## Offline demo and current scope
+
+ The React/Express project already has Compose deployment. The separate root demo provides deterministic offline rankings while the application backend still mixes CommonJS and ES modules. This explicitly labeled demo is a local prototype; it does not
+ contact external services, use credentials, or persist data between executions.
+ Requires Python 3.10+ and optionally Make. From this repository root:
+
+ ```sh
+ make demo
+ python3 demo.py --help
+ # Pass options: make demo ARGS="--help"
+ ```
+
+ The root Dockerfile runs this offline demo only. With Docker running:
+
+ ```sh
+ docker build -t live-leaderboard:demo .
+ docker run --rm live-leaderboard:demo
+ ```
+
+ Docker's first build needs access to the Python base image registry.
+
+### Existing full application
+
+`make deploy` continues to use compose.yaml and the existing frontend/backend
+Dockerfiles, with UI on port 8088. It is separate from `make demo` and the root
+Dockerfile. For development, install dependencies in frontend/ and backend/
+individually with npm ci; their npm run dev scripts start Vite and Express.
+The backend module-format issue above must be resolved before treating the full
+application as verified. `cd backend && npm test -- --runInBand` runs existing Jest tests.
+
+
+## Concrete remaining work
+
+- [ ] Standardize backend module syntax: server.js/app.js use require while models/services use import/export; validate on Node 22.
+- [ ] Await trade processing in routes and reject invalid/negative volumes and malformed timestamps.
+- [ ] Label synthetic mock trades in the UI and make seeding opt-in for non-demo deployments.
+- [ ] Add persistent storage and WebSocket authorization if the application becomes multi-user.

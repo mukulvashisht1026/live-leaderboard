@@ -42,3 +42,9 @@ export:
 
 load:
 	docker image load -i "$(IMAGE_ARCHIVE)"
+
+.PHONY: demo demo-help
+demo:
+	python3 demo.py $(ARGS)
+demo-help:
+	python3 demo.py --help
